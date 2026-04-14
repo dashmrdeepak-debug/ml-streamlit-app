@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 
 # Load model
-model = joblib.load(r"C:\Users\dashm\Downloads\model (2).pkl")
+model = joblib.load(r"model (2).pkl")
 
 st.title("🛒 Purchase Prediction App")
 
