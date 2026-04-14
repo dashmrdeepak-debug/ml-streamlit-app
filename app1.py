@@ -41,3 +41,15 @@ input_data = pd.DataFrame({
     'device_deskt': [device_deskt],
     'device_tabl': [device_tabl]
 })
+
+# Prediction
+if st.button("Predict"):
+    prediction = model.predict(input_data)[0]
+    probability = model.predict_proba(input_data)[0][1]
+
+    st.subheader("Result:")
+
+    if prediction == 1:
+        st.success(f"User WILL Purchase (Confidence: {probability:.2f})")
+    else:
+        st.error(f"User will NOT Purchase (Confidence: {probability:.2f})")
